@@ -1,0 +1,86 @@
+﻿@if (Session["Email"] != null)
+{
+
+    ViewBag.Title = "ProfilesEdit";
+    Layout = "~/Views/Shared/_Resturant.cshtml";
+
+
+    <div class="rform">
+        <form action="/HomeIndex/ProfilesEdit" method="post">
+            <table>
+                <tr>
+                    <th>
+                        Profile
+                    </th>
+                </tr>
+                @foreach (var u in Model)
+                {
+                    if (Session["Email"].ToString() == u.Email)
+                    {
+                    <tr>
+                        <td>
+                            <b>Name</b> <br />
+                            <input type="text" name="Name" value="@u.Name" placeholder="Name">	<br />
+                            <br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <b>Email</b><br />
+                            <input type="text" name="Email" value="@u.Email" Placeholder="Email" readonly><br />
+
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Phone</b><br />
+                            <input type="text" name="Phone" value="@u.Phone" Placeholder="Phone"><br />
+
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Address</b><br />
+                            <input type="text" name="Address" Value="@u.Address" placeholder="Address"><br />
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Password</b><br />
+                            <input type="text" name="Password" value="@u.Password" placeholder="Password"><br />
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>User Type</b><br />
+                            <input type="text" name="Type" value="@u.Type" placeholder="Password" readonly><br />
+                            <br />
+                        </td>
+                    </tr>
+                    <tr align="center">
+                        <td>
+                            <br />
+                            <button>Edit</button>
+                        </td>
+                    </tr>
+                    }
+                }
+                </table>
+        </form>
+    </div>
+}
+else
+{
+    ViewBag.Title = "ProfilesEdit";
+    Layout = "~/Views/Shared/_homelayout.cshtml";
+    <h1 align="center">Restricted</h1>
+
+}
+
+
+

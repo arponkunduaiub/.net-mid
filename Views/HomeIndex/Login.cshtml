@@ -1,0 +1,111 @@
+﻿@model ZeroHunger.Models.login
+@if (Session["Success"] != null)
+{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_homelayout.cshtml";
+    
+
+
+
+    <div class="form">
+        <form action="/HomeIndex/Login" method="post">
+            <table>
+                <tr>
+                    <th>Login</th>
+                </tr>
+                <tr>
+                    <td>
+                        <br /><input type="text" name="Email" value="@Model.Email" placeholder="Email" /><br />
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })<br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="password" name="Password" value="@Model.Password" placeholder="Password" /><br />
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        @Html.ValidationMessage("Error", "", new { @class = "text-danger" })<br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>User Type</b><br />
+                        <div class="select">
+                            <select name="Type" style="width: 300px; height: 40px; padding: 5px; font-size: 20px; font-weight: 700; color: seagreen;">
+                                <option value="">User Type</option>
+                                <option value="Admin">Admin</option>
+                                <option value="Resturant">Resturant</option>
+                                <option value="Deliveryman">Deliveryman</option>
+                            </select>
+                        </div>
+
+                        @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger font" })
+                        <br />
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td><button>Submit</button></td>
+                </tr>
+                <tr align="center">
+                    <td><br /><h4 style="color: seagreen; background-color: greenyellow; font-size:25px;">@Session["Success"]</h4></td>
+                </tr>
+                <tr align="center">
+                    <td><p><br />Don't have an account?<br /><a href="/HomeIndex/Registration">REGISTER </a></p></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+}
+else
+{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_homelayout.cshtml";
+    
+
+
+
+    <div class="form">
+        <form action="/HomeIndex/Login" method="post">
+            <table>
+                <tr>
+                    <th>Login</th>
+                </tr>
+                <tr>
+                    <td>
+                        <br /><input type="text" name="Email" value="@Model.Email" placeholder="Email" /><br />
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })<br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="password" name="Password" value="@Model.Password" placeholder="Password" /><br />
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        <br />
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="select">
+                            <select name="Type" style="width: 300px; height: 40px; padding: 5px; font-size: 20px; font-weight: 700; color: seagreen;">
+                                <option value="">User Type</option>
+                                <option value="Admin">Admin</option>
+                                <option value="Resturant">Resturant</option>
+                                <option value="Deliveryman">Deliveryman</option>
+                            </select>
+                        </div>
+
+                        @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger font" })
+                        @Html.ValidationMessage("Error", "", new { @class = "text-danger" })<br />
+                        <br />
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td><button>Submit</button></td>
+                </tr>
+                <tr align="center">
+                    <td><p><br />Don't have an account?<br /><a href="/HomeIndex/Registration">REGISTER </a></p></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+}

@@ -1,0 +1,47 @@
+﻿@if (Session["Email"] != null)
+{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Resturant.cshtml";
+
+
+    <h3 align="center">Restaurant Dashboard</h3>
+    <h4 align="center">Welcome! @Session["Email"]</h4>
+
+    <table class="table table-bordered">
+        <tr>
+            <th>Id</th>
+            <th>Resturant ID</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Preserved</th>
+            <th>Status</th>
+            <th>Assign</th>
+            <th>Cancel</th>
+        </tr>
+        @foreach (var u in Model)
+        {
+            if (u.ResturantId == "1")
+            {
+                <tr>
+                    <td>@u.Id</td>
+                    <td>@u.ResturantId</td>
+                    <td>@u.Name</td>
+                    <td>@u.Quantity</td>
+                    <td>@u.Preserve</td>
+                    <td>@u.Status</td>
+                    <td>@u.Assign</td>
+                    <td><a href="/HomeIndex/cancel/@u.Id" class="btn btn-danger">Cancel</a></td>
+                </tr>
+            }
+            
+            
+        }
+    </table>
+}
+else
+{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_homelayout.cshtml";
+    <h4 align="center">Restricted</h4>
+}
+

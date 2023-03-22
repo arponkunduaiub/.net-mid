@@ -1,0 +1,64 @@
+﻿@if (Session["Email"] != null)
+{
+
+    ViewBag.Title = "Profiles";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+
+
+    <div class="rform pform">
+        <form action="/HomeIndex/AProfiles" method="post">
+            <table class="table table-bordered" style="font-size:27px;">
+
+                <tr>
+                    <td colspan="2" align="center">Profile</td>
+                </tr>
+                @foreach (var u in Model)
+                {
+                    if (Session["Email"].ToString() == u.Email)
+                    {
+                        <tr>
+                            <td>Name</td>
+                            <td>@u.Name</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>@u.Email</td>
+                        </tr>
+                        <tr>
+                            <td>Phone</td>
+                            <td>@u.Phone</td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td>@u.Address</td>
+                        </tr>
+                        <tr>
+                            <td>.Password</td>
+                            <td>@u.Password</td>
+                        </tr>
+                        <tr>
+                            <td>Type</td>
+                            <td>@u.Type</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center"><a href="/HomeIndex/AProfilesEdit" style="color:white; background-color:seagreen; padding:10px 20px; text-decoration:none;">Edit</a></td>
+                        </tr>
+                    }
+                }
+
+
+            </table>
+        </form>
+    </div>
+
+}
+else
+{
+    ViewBag.Title = "Profiles";
+    Layout = "~/Views/Shared/_homelayout.cshtml";
+    <h1 align="center">Restricted</h1>
+}
+
+
+
+

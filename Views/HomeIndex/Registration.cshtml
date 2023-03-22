@@ -1,0 +1,92 @@
+﻿@model  ZeroHunger.Models.User
+
+@{
+    ViewBag.Title = "Registration";
+    Layout = "~/Views/Shared/_homelayout.cshtml";
+}
+
+<div class="rform">
+    <form action="/HomeIndex/Registration" method="post">
+        <table>
+            <tr>
+                <th>
+                    Registration
+                </th>
+            </tr>
+            <tr align="center">
+                <td>
+                    <br />
+                    @Html.ValidationMessage("Error", "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Name</b> <br />
+                    <input type="text" name="Name" value="@Model.Name" placeholder="Name">	<br />
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger font" })
+                    <br />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <b>Email</b><br />
+                    <input type="text" name="Email" value="@Model.Email" Placeholder="Email"><br />
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger font" })
+
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Phone</b><br />
+                    <input type="text" name="Phone" value="@Model.Phone" Placeholder="Phone"><br />
+                    @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger font" })
+
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Address</b><br />
+                    <input type="text" name="Address" Value="@Model.Address" placeholder="Address"><br />
+                    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger font" })
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Password</b><br />
+                    <input type="password" name="Password" value="@Model.Password" placeholder="Password"><br />
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger font" })
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>User Type</b><br />
+                    <div class="select">
+                        <select name="Type" style="width: 300px; height: 40px; padding: 5px; font-size: 20px; font-weight: 700; color: seagreen;">
+                            <option value="Resturant">Resturant</option>
+                            <option value="Deliveryman">Deliveryman</option>
+                        </select>
+                    </div>
+
+                    @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger font" })
+                    <br />
+                </td>
+            </tr>
+            <tr align="center">
+                <td>
+                    <br />
+                    <button>Submit</button>
+                </td>
+            </tr>
+
+            <tr align="center">
+                <td colspan="2" align="center"><p>Already have an account? <br /><a href="/HomeIndex/Login">Log in</a></p></td>
+            </tr>
+        </table>
+    </form>
+</div>
+

@@ -1,0 +1,87 @@
+﻿@if (Session["Email"] != null)
+{
+    @model ZeroHunger.Models.Order
+    
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Resturant.cshtml";
+    
+
+    <div class="rform">
+        <form action="/HomeIndex/Create" method="post">
+            <table>
+                <tr>
+                    <th>
+                        Create Order
+                    </th>
+                </tr>
+                <tr align="center">
+                    <td>
+                        <br />
+                        @Html.ValidationMessage("Error", "", new { @class = "text-danger" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>ID</b><br />
+                        <input type="text" name="Id" value="@Model.Id" placeholder="Id">	<br />
+                        @Html.ValidationMessageFor(model => model.Id, "", new { @class = "text-danger font" })
+                        <br />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>Resturant ID</b><br />
+                        <input type="text" name="ResturantId" value="@Model.ResturantId" Placeholder="ResturrantId"><br />
+                        @Html.ValidationMessageFor(model => model.ResturantId, "", new { @class = "text-danger font" })
+
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Name</b><br />
+                        <input type="text" name="Name" value="@Model.Name" Placeholder="Name"><br />
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger font" })
+
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Quantity</b><br />
+                        <input type="text" name="Quantity" Value="@Model.Quantity" placeholder="Quantity"><br />
+                        @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger font" })
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Preserve</b><br />
+                        <input type="text" name="Preserve" value="@Model.Preserve" placeholder="Preserve"><br />
+                        @Html.ValidationMessageFor(model => model.Preserve, "", new { @class = "text-danger font" })
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="hidden" name="Status" value="Request">
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td>
+                        <br />
+                        <button>Submit</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+}
+else
+{
+    ViewBag.Title = "Profiles";
+    Layout = "~/Views/Shared/_homelayout.cshtml";
+    <h1 align="center">Restricted</h1>
+}
+

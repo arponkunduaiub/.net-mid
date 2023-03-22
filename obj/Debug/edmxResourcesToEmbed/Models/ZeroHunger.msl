@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ZeroHungerModel1StoreContainer" CdmEntityContainer="ZeroHungerEntities5">
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="ZeroHungerModel1.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="RiderId" ColumnName="RiderId" />
+          <ScalarProperty Name="ResturantId" ColumnName="ResturantId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="ZeroHungerModel1.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="Assign" ColumnName="Assign" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Preserve" ColumnName="Preserve" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ResturantId" ColumnName="ResturantId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

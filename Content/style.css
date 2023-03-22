@@ -1,0 +1,251 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    padding: 0;
+}
+
+
+
+/*Homelayout patr css start*/
+
+header {
+    background-color: #34ebc0;
+}
+
+.logo{
+    height:80px;
+    float:left;
+}
+
+.logo img{
+    height:100%;
+}
+
+.navigation{
+    margin-top:20px;
+    float:right;
+}
+
+.navigation a{
+    font-size:15px;
+    font-weight:400;
+    line-height:40px;
+    color:forestgreen;
+}
+
+footer {
+    background-color: #34ebc0;
+    text-align: center;
+    padding: 5px 25px 25px 25px;
+}
+
+/*Homelayout part css end*/
+
+
+
+
+/*Resturantlayout part css Start*/
+
+header .logout a{
+    float:right;
+    text-align:right;
+    margin-top:25px;
+    font-size:18px;
+}
+
+
+
+
+
+/*Resturantlayout part css end*/
+
+
+
+
+
+/*Login part css start*/
+
+.form {
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form table{
+    margin:20px 0;
+    border-bottom:2px solid seagreen;
+}
+
+
+
+.form table tr th{
+    text-align:center;
+    font-size:25px;
+    font-weight:700;
+    padding:15px;
+    border-top:2px solid seagreen;
+    border-left:2px solid seagreen;
+    border-right:2px solid seagreen;
+    color:seagreen;
+}
+
+.form table tr td {
+    padding-left: 15px;
+    padding-right: 15px;
+    border-left: 2px solid seagreen;
+    border-right: 2px solid seagreen;
+}
+
+.form table tr td a{
+    color:seagreen;
+    font-weight:700;
+}
+
+.form table tr td input{
+    padding:10px;
+    height:50px;
+    width:400px;
+    font-size:15px;
+    border:3px solid seagreen;
+    color:seagreen;
+}
+
+.form table tr td input::placeholder{
+    color:seagreen;
+}
+
+.form table tr td button {
+    padding: 5px 20px;
+    font-size: 20px;
+    background-color: seagreen;
+    color: white;
+    border: 2px solid seagreen;
+}
+
+.form table tr td button:hover{
+    background-color:mediumseagreen;
+    color:green;
+    border:2px solid seagreen;
+}
+
+
+
+/*Login part css end*/
+
+
+
+/*Registration part css start*/
+
+
+.rform {
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rform table{
+    margin:20px 0;
+    border-bottom:3px solid seagreen;
+}
+
+
+.rform table tr th{
+    text-align:center;
+    font-size:25px;
+    font-weight:700;
+    padding:15px;
+    border-top:2px solid seagreen;
+    border-left:2px solid seagreen;
+    border-right:2px solid seagreen;
+    color:seagreen;
+}
+
+.rform table tr td {
+    padding-left: 15px;
+    padding-right: 15px;
+    border-left: 2px solid seagreen;
+    border-right: 2px solid seagreen;
+}
+
+.rform form table tr b{
+    font-size:18px;
+}
+
+.rform table tr td a{
+    color:seagreen;
+    font-weight:700;
+}
+
+.rform table tr td p{
+    color:seagreen;
+    font-weight:400;
+    font-size:20px;
+}
+
+.rform table tr td input{
+    padding:10px;
+    height:50px;
+    width:400px;
+    font-size:15px;
+    border:3px solid seagreen;
+    color:seagreen;
+}
+
+.gender{
+    font-size:20px;
+}
+
+.gender label{
+    font-size:20px;
+}
+
+.rform table tr td .gender input {
+    height: 20px;
+    width: 25px;
+    line-height:20px;
+    border: 3px solid seagreen;
+    color: seagreen;
+    font-size:20px;
+    font-weight:700;
+}
+
+
+
+.rform table tr td input::placeholder{
+    color:seagreen;
+    font-size:18px;
+    font-weight:700;
+}
+
+.rform table tr td button {
+    padding: 5px 20px;
+    font-size: 20px;
+    background-color: seagreen;
+    color: white;
+    border: 2px solid seagreen;
+    margin-bottom:10px;
+}
+
+.rform table tr td button:hover{
+    background-color:mediumseagreen;
+    color:green;
+    border:2px solid seagreen;
+}
+
+
+/*Registration part css end*/
+

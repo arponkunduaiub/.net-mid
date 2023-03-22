@@ -1,0 +1,46 @@
+﻿@if (Session["Email"] != null)
+{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+
+
+    <h3 align="center">Admin Dashboard</h3>
+    <h4 align="center">Welcome! @Session["Email"]</h4>
+
+    <table class="table table-bordered">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Password</th>
+            <th>Type</th>
+            <th>ResturantId</th>
+            <th>RiderId</th>
+            <th></th>
+            <th></th>
+        </tr>
+        @foreach (var u in Model)
+        {
+            <tr>
+                <td>@u.Name</td>
+                <td>@u.Email</td>
+                <td>@u.Phone</td>
+                <td>@u.Address</td>
+                <td>@u.Password</td>
+                <td>@u.Type</td>
+                <td>@u.ResturantId</td>
+                <td>@u.RiderId</td>
+                <td><a href="/HomeIndex/UserEdit/@u.Email" class="btn btn-info">Edit</a></td>
+                <td><a href="" class="btn btn-danger">Delete</a></td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_homelayout.cshtml";
+    <h4 align="center">Restricted</h4>
+}
+

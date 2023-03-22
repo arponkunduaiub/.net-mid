@@ -1,0 +1,62 @@
+﻿@if (Session["Email"] != null)
+{
+
+    ViewBag.Title = "Profiles";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+
+
+    <div class="rform pform">
+        <form action="/HomeIndex/Registration" method="post">
+            <table class="table table-bordered" style="font-size:27px;">
+
+                <tr>
+                    <td colspan="8" align="center">Profile</td>
+                </tr>
+                <tr>
+                    <th>Resturant Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Password</th>
+                    <th>Type</th>
+                    <th>ResturantId</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                @foreach (var u in Model)
+                {
+                    if (u.Type == "Resturant")
+                    {
+                        <tr>
+                            <td>@u.Name</td>
+                            <td>@u.Email</td>
+                            <td>@u.Phone</td>
+                            <td>@u.Address</td>
+                            <td>@u.Password</td>
+                            <td>@u.Type</td>
+                            <td>@u.ResturantId</td>
+                            <td><a href="/Login/Edit/@u.Email" class="btn btn-info">Edit</a></td>
+                            <td><a href="" class="btn btn-danger">Delete</a></td>
+                        </tr>
+
+                    }
+                }
+
+
+            </table>
+        </form>
+    </div>
+
+}
+else
+{
+    ViewBag.Title = "Profiles";
+    Layout = "~/Views/Shared/_homelayout.cshtml";
+    <h1 align="center">Restricted</h1>
+}
+
+
+
+
+
+

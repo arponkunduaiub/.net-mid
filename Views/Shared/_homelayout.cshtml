@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_homelayout</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/style.css" rel="stylesheet" />
+
+</head>
+<body>
+    @*Header part html start*@
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="logo">
+                        <img src="~/images/ZeroHunger.png" alt="Alternate Text" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="navigation">
+                        <a href="/HomeIndex/Login">Login</a> |
+                        <a href="/HomeIndex/Registration"> Signup</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    <footer>
+        <div class="container">
+            <hr />
+            <p> &copy;Copyrights are provided by Hasib @DateTime.Now.Year</p>
+        </div>
+    </footer>
+</body>
+</html>
